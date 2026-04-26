@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>Access Terminal</title>
+
+<style>
+  body {
+    margin: 0;
+    background: black;
+    color: #00ffcc;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* 9:16 phone frame (1080x1920 style) */
+  .screen {
+    width: min(100vw, 1080px);
+    height: min(100vh, 1920px);
+    aspect-ratio: 9 / 16;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #00ffcc;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+  }
+
+  input {
+    margin-top: 15px;
+    padding: 12px;
+    background: black;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+    font-family: monospace;
+    outline: none;
+    width: 70%;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: black;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+    cursor: pointer;
+    font-family: monospace;
+  }
+
+  a {
+    color: #00ffcc;
+    margin-top: 20px;
+    display: none;
+    word-break: break-all;
+  }
+
+  #message {
+    margin-top: 20px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="screen">
+    <div>ENTER PASSWORD</div>
+
+    <input type="text" id="password" placeholder="************" />
+    <button onclick="checkPassword()">Submit</button>
+
+    <div id="message"></div>
+    <a id="link" href="https://jaxepot.my.canva.site/lablitir" target="_blank">
+      OPEN TRANSMISSION
+    </a>
+  </div>
+
+<script>
+  function checkPassword() {
+    const input = document.getElementById("password").value;
+    const message = document.getElementById("message");
+    const link = document.getElementById("link");
+
+    if (input === "SAJLS1921") {
+      message.textContent = "ACCESS GRANTED... REDIRECTING";
+      link.style.display = "block";
+
+      // auto redirect after short delay
+      setTimeout(() => {
+        window.location.href = "https://jaxepot.my.canva.site/lablitir";
+      }, 2000);
+
+    } else {
+      message.textContent = "ACCESS DENIED";
+      link.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
